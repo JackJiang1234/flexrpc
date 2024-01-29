@@ -1,4 +1,4 @@
-package protocol
+package message
 
 // Header is the first part of Message and has fixed size.
 type Header [12]byte
