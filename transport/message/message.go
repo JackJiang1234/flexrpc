@@ -28,6 +28,10 @@ func (h Header) CheckMagicNumber() bool {
 	return h[0] == magicNumber
 }
 
+func (h Header) GetSerializeType() codec.SerializeType {
+	return codec.SerializeType(h[1])
+}
+
 func (h Header) SerializeType(t codec.SerializeType) {
 	h[1] = byte(t)
 }
