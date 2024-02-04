@@ -9,7 +9,9 @@ import (
 // the second byte is serialize type
 type Header [2]byte
 
-type Body struct {
+type Message struct {
+	Header
+
 	Seq uint64 // sequence number chosen by client
 
 	Error         string
