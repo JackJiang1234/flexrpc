@@ -23,7 +23,7 @@ type Message struct {
 }
 
 const (
-	magicNumber byte = 0x06
+	magicNumber byte = 0x66
 )
 
 func (h Header) CheckMagicNumber() bool {
