@@ -30,8 +30,20 @@ func (h Header) CheckMagicNumber() bool {
 	return h[0] == magicNumber
 }
 
+func (h Header) MagicNumberNotMatch() bool {
+	return h[0] != magicNumber
+}
+
 func (h Header) GetSerializeType() codec.SerializeType {
 	return codec.SerializeType(h[1])
+}
+
+func (h Header) GetMagicNumber() byte {
+	return h[0];
+}
+
+func (h Header) Slice() []byte {
+	return h[:]
 }
 
 func (h Header) SerializeType(t codec.SerializeType) {

@@ -8,7 +8,7 @@ import (
 
 func TestNewHeader(t *testing.T) {
 	h := NewHeader()
-	if !h.CheckMagicNumber() {
+	if !h.MagicNumberNotMatch() {
 		t.Errorf("new header has error. %v", h)
 	}
 }
@@ -34,8 +34,8 @@ func TestWriteHeader(t *testing.T) {
 	h := NewHeader()
 	h.SerializeType(codec.JSON)
 	n, _ := h.Write(&buf)
-	if (n != len(h)){
+	if n != len(h) {
 		t.Errorf("write head len is incorrected. expect: %v, actual %v", len(h), n)
 	}
-	
+
 }
